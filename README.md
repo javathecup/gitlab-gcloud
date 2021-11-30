@@ -1,4 +1,4 @@
-# gitlab-kubernetes-template
+# GitLab Runners on GKE with workload identity
    
 ## Create a cloud storage bucket and change the variable in "main.tf" 
 cloud storage will be used as terraform backend
