@@ -1,0 +1,15 @@
+timeout: 2600s
+steps:
+- id: terraform-init
+  name: hashicorp/terraform:1.0.0
+  args: ['init']
+
+- id: terraform-apply
+  name: hashicorp/terraform:1.0.0
+  args: ['apply', '-auto-approve']
+  env:
+    - 'TF_VAR_project_id=${_PROJECT_ID}'
+    - 'TF_VAR_node_type=${_NODE_TYPE}'
+    - 'TF_VAR_gitlab_token=${_GITLAB_TOKEN}'
+    - 'TF_VAR_zone_runners=${_ZONE_RUNNERS}'
+    - 'TF_VAR_gitlab_url=${_GITLAB_URL}'

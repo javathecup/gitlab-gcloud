@@ -1,0 +1,9 @@
+module "sidespin-sandbox-328820" {
+  # Runners for Google Sandbox Group
+  source                     = "./modules/worloadIdentity"
+  domain                     = "https://${var.gitlab_url}/" 
+  roles                      = ["roles/owner"]
+  token                      =  data.gitlab_project.current.runners_token
+  project_id                 = "simple-331916" # GCP project id 
+  runner_tag = "test" 
+}
